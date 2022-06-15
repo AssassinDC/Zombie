@@ -4,11 +4,34 @@ using UnityEngine;
 
 public class spawn : MonoBehaviour
 {
-    public GameObject []zombie;
-    public Transform []spawnn;
-    void Spawn()
+
+    public GameObject [] Enemy;
+
+    public float timeSpawn = 1;
+    public float repeatSpawnRate = 3;
+
+    public Transform xRangeRight;
+    public Transform xRangeleft;
+
+    public Transform yRangeUp;
+    public Transform yRangeDown;
+    private void Start()
     {
-        int EnemyRandum = Random.Range(0, zombie);
+        InvokeRepeating("Spawn", timeSpawn, repeatSpawnRate);
+    }
+    
+    public void Spawn()
+    {
+        Vector3 spawnPosition = new Vector3(0, 0, 0);
+        spawnPosition =new Vector3 (Random.Range(xRangeleft.position.x, xRangeRight.position.x), Random.Range(yRangeDown.position.y, yRangeUp.position.y),0);
         
+
+          GameObject enemy = Instantiate(Enemy[Random.Range(0, Enemy.Length)], spawnPosition,gameObject.transform.rotation);
+
+        
+    }
+    private void Update()
+    {
+        //Spawn();
     }
 }

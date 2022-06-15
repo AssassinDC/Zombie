@@ -7,16 +7,18 @@ public class Controller : MonoBehaviour
     public float velocidadMove;
     [SerializeField]private Transform []puntosMovimiento;
     [SerializeField] private float distancia;
-    private SpriteRenderer spriteRender;
     private int siguientePaso = 0;
     public GameObject enemy;
+    public Life roborRojo;
 
     private void Start()
     {
-        spriteRender = GetComponent<SpriteRenderer>();
+        
        
     }
-    private void Update()
+
+    
+    public void Move()
     {
         transform.position = Vector2.MoveTowards(transform.position, puntosMovimiento[siguientePaso].position, velocidadMove * Time.deltaTime);
 
@@ -26,14 +28,26 @@ public class Controller : MonoBehaviour
 
             if (siguientePaso >= puntosMovimiento.Length)
             {
-                gameObject.SetActive(false);
+                //gameObject.SetActive(false);
+                Destroy(gameObject);
             }
-
-            
-
-           
         }
     }
+    private void Update()
+    {
+        Move();
+    }
 
-    
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+
+    }
+
+    private void OnMouseDown()
+    {
+        
+        Destroy(gameObject);
+    }
+
 }
