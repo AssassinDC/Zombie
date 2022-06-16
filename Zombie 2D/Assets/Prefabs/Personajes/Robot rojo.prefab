@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 8792418645190941277}
   - component: {fileID: 8792418645190941276}
   - component: {fileID: 8792418645190941275}
-  - component: {fileID: -2896000712740408491}
   - component: {fileID: -4658765883787505057}
   m_Layer: 0
   m_Name: Robot rojo
@@ -148,25 +147,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278c149e15699114bbbe37541db99a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadMove: 4
+  velocidadMove: 2
   puntosMovimiento:
   - {fileID: 8792418643674369743}
   distancia: 0.1
-  enemy: {fileID: 8792418645190941274}
-  roborRojo: {fileID: -2896000712740408491}
---- !u!114 &-2896000712740408491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8792418645190941274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02e55b84dec16cf498f3b6c96857b64b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 2
+  isHuman: 0
+  damage: 4
 --- !u!70 &-4658765883787505057
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

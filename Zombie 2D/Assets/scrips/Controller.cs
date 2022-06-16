@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
+    [Header("movimiento")]
     public float velocidadMove;
     [SerializeField]private Transform []puntosMovimiento;
     [SerializeField] private float distancia;
     private int siguientePaso = 0;
-    public GameObject enemy;
-    public Life roborRojo;
+
+    [Header("Damage")]
+    public bool isHuman;
+    public int damage;
+    int actualDamage;
+    public PlayerStadistics vida;
+
+    
 
     private void Start()
     {
-        
+        vida = FindObjectOfType<PlayerStadistics>();
        
     }
 
@@ -38,16 +45,29 @@ public class Controller : MonoBehaviour
         Move();
     }
 
+    
+
+     private void OnMouseDown()
+     {
+        
+        actualDamage++;
+        if (isHuman)
+        {
+            vida.life--;
+        }
+         
+        if(actualDamage >= damage)
+        {
+            Destroy(gameObject);
+        }
+        
+     }
+    
     private void OnBecameInvisible()
     {
+        vida.life--;
         Destroy(gameObject);
 
-    }
-
-    private void OnMouseDown()
-    {
-        
-        Destroy(gameObject);
     }
 
 }

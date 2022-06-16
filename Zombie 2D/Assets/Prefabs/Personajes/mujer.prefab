@@ -123,7 +123,8 @@ MonoBehaviour:
   - {fileID: 5074272073509220651, guid: 6c7002f3af246d8459b44f30eca3d744, type: 3}
   - {fileID: 6613864029119483102, guid: a941fb6417a6e8d4791d833478e8aabd, type: 3}
   distancia: 0.8
-  enemy: {fileID: 4423152064919057980}
+  isHuman: 0
+  damage: 2
 --- !u!70 &-4916109339840009561
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

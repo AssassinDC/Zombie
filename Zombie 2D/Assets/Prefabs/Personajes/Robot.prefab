@@ -121,7 +121,8 @@ MonoBehaviour:
   puntosMovimiento:
   - {fileID: 3173979093083689859}
   distancia: 0.8
-  enemy: {fileID: 3173979092333279530}
+  isHuman: 0
+  damage: 4
 --- !u!70 &169924822454082524
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
