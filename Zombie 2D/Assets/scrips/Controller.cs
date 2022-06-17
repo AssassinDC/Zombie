@@ -14,8 +14,8 @@ public class Controller : MonoBehaviour
     public bool isHuman;
     public int damage;
     int actualDamage;
-    public PlayerStadistics vida;
-
+    PlayerStadistics vida;
+    
     
 
     private void Start()
@@ -33,11 +33,11 @@ public class Controller : MonoBehaviour
         {
             siguientePaso += 1;
 
-            if (siguientePaso >= puntosMovimiento.Length)
+           /*if (siguientePaso >= puntosMovimiento.Length)
             {
                 //gameObject.SetActive(false);
                 Destroy(gameObject);
-            }
+            }*/
         }
     }
     private void Update()
@@ -62,11 +62,26 @@ public class Controller : MonoBehaviour
         }
         
      }
+
     
+
+    private void OnTriggerStay2D(Collider2D collision2D)
+    {
+        if(transform.tag == "Enemy" && collision2D)
+        {
+            Destroy(gameObject);
+            vida.life--;
+        }
+    }
+
+
     private void OnBecameInvisible()
     {
-        vida.life--;
-        Destroy(gameObject);
+        if (isHuman)
+        {
+            Destroy(gameObject);
+        }
+         
 
     }
 

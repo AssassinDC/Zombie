@@ -5,11 +5,21 @@ using UnityEngine;
 public class PlayerStadistics : MonoBehaviour
 {
     [Header("Player")]
-    public int life;
+    public Game gameOver;
+    public int life = 3;
     
 
-    /*public void Vida()
+   public void GameOver()
     {
-        life++;
-    }*/
+        if (life <= 0)
+        { 
+            gameOver.Setup(life);
+            
+        }
+    }
+
+    private void Update()
+    {
+        GameOver();
+    }
 }
