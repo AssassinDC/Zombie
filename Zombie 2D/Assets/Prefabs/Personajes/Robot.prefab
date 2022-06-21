@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -87851405452967582, guid: 8200abdc398bd904681574b90cbb4b2c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -117,12 +117,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278c149e15699114bbbe37541db99a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadMove: 7
+  velocidadMove: 5
   puntosMovimiento:
   - {fileID: 3173979093083689859}
   distancia: 0.8
   isHuman: 0
-  damage: 4
+  damage: 2
 --- !u!70 &169924822454082524
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
