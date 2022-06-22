@@ -15,7 +15,10 @@ public class Controller : MonoBehaviour
     public int damage;
     int actualDamage;
     PlayerStadistics vida;
-    
+
+    [Header("Sonido")]
+    public Sonido sonido;
+
     
 
     private void Start()
@@ -43,6 +46,9 @@ public class Controller : MonoBehaviour
     private void Update()
     {
         Move();
+
+        
+
     }
 
     
@@ -54,11 +60,13 @@ public class Controller : MonoBehaviour
         if (isHuman)
         {
             vida.life--;
+            sonido.SonidoAudio();
         }
          
         if(actualDamage >= damage)
         {
             Destroy(gameObject);
+            sonido.SonidoAudio();
         }
         
      }

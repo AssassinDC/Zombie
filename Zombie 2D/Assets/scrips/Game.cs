@@ -10,7 +10,9 @@ public class Game : MonoBehaviour
     public GameObject canvasInicio;
 
     //public Text pointsText;
-   public void Setup (int life)
+
+   
+    public void Setup (int life)
     {
         
         canvasGameOver.SetActive(true);
@@ -19,10 +21,10 @@ public class Game : MonoBehaviour
 
     private void Update()
     {
-        if (canvasInicio == true && Input.GetKeyDown(KeyCode.X))
+       /* if (canvasInicio == true && Input.GetKeyDown(KeyCode.X))
         {
-            canvasInicio.gameObject.SetActive(true);
-        }
+            canvasInicio.gameObject.SetActive(false);
+        }*/
     }
 
 
@@ -31,5 +33,19 @@ public class Game : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    
+    public void PlayButton()
+    {
+        SceneManager.LoadScene("Game");
+        canvasInicio.gameObject.SetActive(false);
+        
+    }
+
+    public void PlayPlayyer()
+    {
+        SceneManager.LoadScene("Play");
+    }
+
+   
+
+
 }

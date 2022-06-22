@@ -15,9 +15,14 @@ public class spawn : MonoBehaviour
 
     public Transform yRangeUp;
     public Transform yRangeDown;
+
+    [Header("Dificultad")]
+    public float contador = 0f;
+    public float curva = 10f;
+
     private void Start()
     {
-        InvokeRepeating("Spawn", timeSpawn, repeatSpawnRate);
+        //InvokeRepeating("Spawn", timeSpawn, repeatSpawnRate);
     }
     
     public void Spawn()
@@ -33,5 +38,13 @@ public class spawn : MonoBehaviour
     private void Update()
     {
         //Spawn();
+        
+        contador += Time.deltaTime;
+        if (contador >= curva)
+        {
+            timeSpawn--;
+            repeatSpawnRate--;
+            contador = 0;
+        }
     }
 }

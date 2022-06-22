@@ -153,6 +153,7 @@ MonoBehaviour:
   distancia: 0.9
   isHuman: 1
   damage: 1
+  sonido: {fileID: 6645558650258301068, guid: 76dc36874dfdb9842ba98fedd2e932cf, type: 3}
 --- !u!70 &4765816908732096645
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
