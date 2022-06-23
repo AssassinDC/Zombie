@@ -1487,18 +1487,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy:
-  - {fileID: 4765816908732096642, guid: 3670a1fc61c97714987036ed2af9dad6, type: 3}
-  - {fileID: 3173979092333279530, guid: 601e0d06e2bbcbe4d81c1ec3dbdc72af, type: 3}
-  - {fileID: 4423152064919057980, guid: 7c346f2e917406d409f832ccb91dcf28, type: 3}
-  - {fileID: 8792418645190941274, guid: 165e87b4c5623194cbb23587fc31ecdc, type: 3}
-  timeSpawn: 1
-  repeatSpawnRate: 0.5
+  - {fileID: 2035943242105024686, guid: 16834f20120d558468291d011d3a433b, type: 3}
+  - {fileID: 1710236015154332853, guid: 601e0d06e2bbcbe4d81c1ec3dbdc72af, type: 3}
+  - {fileID: 4800600075802908356, guid: f02c8be13f00acc4ab108c30c442c165, type: 3}
+  - {fileID: 7122276388496349535, guid: d9b5a637623bd564a8da624457708aa1, type: 3}
+  - {fileID: 6699289104120474477, guid: 7c346f2e917406d409f832ccb91dcf28, type: 3}
+  timeSpawn: 5
+  repeatSpawnRate: 5
   xRangeRight: {fileID: 999252986}
   xRangeleft: {fileID: 945623210}
   yRangeUp: {fileID: 1282394603}
   yRangeDown: {fileID: 641444120}
   contador: 0
-  curva: 10
+  curva: 120
 --- !u!1 &1422454634
 GameObject:
   m_ObjectHideFlags: 0

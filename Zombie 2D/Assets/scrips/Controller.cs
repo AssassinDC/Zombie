@@ -14,6 +14,7 @@ public class Controller : MonoBehaviour
     public bool isHuman;
     public int damage;
     int actualDamage;
+    public GameObject[] Sprite;
     PlayerStadistics vida;
 
     [Header("Sonido")]
@@ -65,18 +66,25 @@ public class Controller : MonoBehaviour
          
         if(actualDamage >= damage)
         {
-            Destroy(gameObject);
+            velocidadMove = 0;
+
+            Destroy(Sprite[1]);
+            Sprite[0].SetActive(true);
             sonido.SonidoAudio();
+
+            if(Sprite[0] == true)
+            {
+                Destroy(gameObject, 1f);
+            }
         }
-        
      }
 
     
-
     private void OnTriggerStay2D(Collider2D collision2D)
     {
         if(transform.tag == "Enemy" && collision2D)
         {
+            Debug.Log("Entra");
             Destroy(gameObject);
             vida.life--;
         }

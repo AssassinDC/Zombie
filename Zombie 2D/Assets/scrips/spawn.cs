@@ -18,11 +18,11 @@ public class spawn : MonoBehaviour
 
     [Header("Dificultad")]
     public float contador = 0f;
-    public float curva = 10f;
+    public float curva = 120f;
 
     private void Start()
     {
-        //InvokeRepeating("Spawn", timeSpawn, repeatSpawnRate);
+        InvokeRepeating("Spawn", timeSpawn, repeatSpawnRate);
     }
     
     public void Spawn()
@@ -42,9 +42,12 @@ public class spawn : MonoBehaviour
         contador += Time.deltaTime;
         if (contador >= curva)
         {
-            timeSpawn--;
-            repeatSpawnRate--;
+            
+            timeSpawn = timeSpawn - 0.5F;
+            repeatSpawnRate = repeatSpawnRate - 0.5f;
             contador = 0;
+            InvokeRepeating("Spawn", timeSpawn, repeatSpawnRate);
+            
         }
     }
 }

@@ -29,7 +29,7 @@ public class PlayerStadistics : MonoBehaviour
 
         if(life < 1)
         {
-            Destroy(corazon[0].gameObject);
+            Destroy(corazon[2].gameObject);
 
         }
         else if (life <2)
@@ -38,7 +38,7 @@ public class PlayerStadistics : MonoBehaviour
         }
         else if (life < 3)
         {
-            Destroy(corazon[2].gameObject);
+            Destroy(corazon[0].gameObject);
         }
     }
 
