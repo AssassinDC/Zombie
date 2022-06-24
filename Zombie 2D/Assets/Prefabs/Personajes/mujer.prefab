@@ -75,6 +75,7 @@ MonoBehaviour:
   - {fileID: 6962582202028675567}
   - {fileID: 6699289104195482340}
   sonido: {fileID: 9078664711015394473, guid: b5d4658e3634ee14c9f3a94eae65a9d7, type: 3}
+  cantidadPuntos: 2
 --- !u!1 &6699289104195482340
 GameObject:
   m_ObjectHideFlags: 0

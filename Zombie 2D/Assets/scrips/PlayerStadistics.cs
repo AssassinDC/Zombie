@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerStadistics : MonoBehaviour
 {
-    [Header("Player")]
+   [Header("Player")]
     public GameObject[] corazon;
     public Game gameOver;
     public int life = 3;
 
+    [Header("Score")]
+    public float score;
+    public TextMeshProUGUI textoScore;
+    public GameObject hola;
+
+
     private void Start()
     {
         life = corazon.Length;
+        //textoScore = GetComponent<TextMeshProUGUI>();
     }
     public void GameOver()
     {
@@ -27,12 +36,12 @@ public class PlayerStadistics : MonoBehaviour
     {
         GameOver();
 
-        if(life < 1)
+         if (life < 1)
         {
             Destroy(corazon[2].gameObject);
 
         }
-        else if (life <2)
+        else if (life < 2)
         {
             Destroy(corazon[1].gameObject);
         }
@@ -40,11 +49,17 @@ public class PlayerStadistics : MonoBehaviour
         {
             Destroy(corazon[0].gameObject);
         }
+
+        //score += Time.deltaTime;
+        textoScore.text = "Score: " + score.ToString("0");
     }
 
-   /* public void Game()
+
+   public void SumarPuntos(float PuntosEntrada)
     {
-        //reperir
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }*/
+        score += PuntosEntrada;
+    }
+
+    
+   
 }

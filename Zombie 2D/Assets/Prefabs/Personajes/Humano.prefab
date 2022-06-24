@@ -189,6 +189,7 @@ MonoBehaviour:
   - {fileID: 6813876753438646150}
   - {fileID: 7122276387742217170}
   sonido: {fileID: 6645558650258301068, guid: 76dc36874dfdb9842ba98fedd2e932cf, type: 3}
+  cantidadPuntos: -5
 --- !u!70 &7122276388496349533
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
 {
@@ -20,12 +21,25 @@ public class Controller : MonoBehaviour
     [Header("Sonido")]
     public Sonido sonido;
 
+    [Header("Puntos")]
+    [SerializeField] private float cantidadPuntos;
+    private PlayerStadistics puntaje;
+
     
+
+
 
     private void Start()
     {
         vida = FindObjectOfType<PlayerStadistics>();
-       
+
+        puntaje = FindObjectOfType<PlayerStadistics>();
+
+        if (cantidadPuntos <= 0)
+        {
+            cantidadPuntos = 0;
+        }
+
     }
 
     
@@ -47,7 +61,7 @@ public class Controller : MonoBehaviour
     private void Update()
     {
         Move();
-
+        
         
 
     }
@@ -66,16 +80,21 @@ public class Controller : MonoBehaviour
          
         if(actualDamage >= damage)
         {
+
+            GetComponent<Collider2D>().enabled = false;
             velocidadMove = 0;
 
             Destroy(Sprite[1]);
             Sprite[0].SetActive(true);
             sonido.SonidoAudio();
+            puntaje.SumarPuntos(cantidadPuntos);
 
-            if(Sprite[0] == true)
+            if (Sprite[0] == true)
             {
                 Destroy(gameObject, 1f);
             }
+
+            ;
         }
      }
 
@@ -84,7 +103,6 @@ public class Controller : MonoBehaviour
     {
         if(transform.tag == "Enemy" && collision2D)
         {
-            Debug.Log("Entra");
             Destroy(gameObject);
             vida.life--;
         }
@@ -101,4 +119,5 @@ public class Controller : MonoBehaviour
 
     }
 
+    
 }
