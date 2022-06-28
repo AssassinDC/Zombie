@@ -18,7 +18,7 @@ public class spawn : MonoBehaviour
 
     [Header("Dificultad")]
     public float contador = 0f;
-    private float curva = 10f;
+    public float curva = 30f;
 
     int cantidad = 2;
 

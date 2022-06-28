@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audio: {fileID: 9078664711516235654}
   sonido: {fileID: 8300000, guid: 68abbb5bdbf06424da92a33d8d8434b1, type: 3}
-  Volumen: 4
+  volumen: 10
 --- !u!1 &9078664711516235652
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +92,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

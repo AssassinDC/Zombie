@@ -45,7 +45,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -173,4 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audio: {fileID: 6645558648612678563}
   sonido: {fileID: 8300000, guid: adf404a94c4c11248ab77754bb7c3b35, type: 3}
-  Volumen: 4
+  volumen: 10

@@ -35,10 +35,10 @@ public class Controller : MonoBehaviour
 
         puntaje = FindObjectOfType<PlayerStadistics>();
 
-        if (cantidadPuntos <= 0)
+        /*if (cantidadPuntos <= 0)
         {
             cantidadPuntos = 0;
-        }
+        }*/
 
     }
 

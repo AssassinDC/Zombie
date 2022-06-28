@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -87851405452967582, guid: 8200abdc398bd904681574b90cbb4b2c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -259,7 +259,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6672688976762271377}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2, y: 3.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -292,7 +292,6 @@ MonoBehaviour:
   - {fileID: 6672688975471480115}
   sonido: {fileID: 9078664711015394473, guid: b5d4658e3634ee14c9f3a94eae65a9d7, type: 3}
   cantidadPuntos: 1
-  puntaje: {fileID: 0}
 --- !u!70 &6672688976762271380
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

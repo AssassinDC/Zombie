@@ -6,74 +6,72 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
+    [Header("Game Over")]
     public GameObject canvasGameOver;
+
+    [Header("Inicio")]
     public GameObject canvasInicio;
 
-
-    [Header("Tiempo")]
-    [Tooltip("Tiempo inicial en segundos")]
-    public float timeInicial;
-
-    [Tooltip("Escala del tiempo del reloj")]
-    [Range(-10.0f, 10.0f)]
-    public float escalaDeTiempo = 1;
-
-    public Text myText;
-    private float tiempoDelFrameConTimeScale = 0f;
-    private float tiempoAmostrarEnsegundo = 0f;
-    private float escalaDeTiempoAlPausar, escalaDeTiempoInicial;
-    //private bool estaPausado = false;
-
-    
-
-
-
-
-
-
+    [Header("Pausa")]
+    public GameObject canvasPausa;
+    public GameObject botonPausa;
+    private bool isPause;
     private void Start()
     {
-        //establecer la escal de tiempo original
-        escalaDeTiempoInicial = escalaDeTiempo;
-
-       /* //get the text component
-        myText = GetComponent<Text>();*/
-
-        //inicialmente la variable que acumular los tiempos de cada frame con el tiempo
-        tiempoAmostrarEnsegundo = timeInicial;
-
-        ActualizarReloj(timeInicial);
+       
     }
-    public void Setup (int life)
+    /*public void Setup (int life)
     {
-        
-        canvasGameOver.SetActive(true);
+        SceneManager.LoadScene("GameOver");
         //pointsText.text = life.ToString();
-    }
+    }*/
 
     private void Update()
     {
-
-
-        //la siguiente variable representa el tiempo de cada frame considerando la escala de tiempo
-        tiempoDelFrameConTimeScale = Time.deltaTime * escalaDeTiempo;
-
-        //la siguiente varieble va acumulando el tiempo trancurrido para luego mostrarlo en el reloj
-        tiempoAmostrarEnsegundo += tiempoDelFrameConTimeScale;
-        ActualizarReloj(tiempoAmostrarEnsegundo);
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPause)
+            {
+                Reanudar();
+            }
+            else
+            {
+                Pausa();
+            }
+        }
+    }
+    public void Pausa()
+    {
+        isPause = true;
+        //canvasPausa = canvasPausa;
+        Time.timeScale = 0f;
+        botonPausa.SetActive(false);
+        canvasPausa.SetActive(true);
     }
 
+    public void Reanudar()
+    {
+        isPause = false;
+        Time.timeScale = 1f;
+        botonPausa.SetActive(true);
+        canvasPausa.SetActive(false);
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene("Play");
+    }
 
     public void RestartButton()
-    {
+    { 
+        
         SceneManager.LoadScene("Game");
     }
 
     public void PlayButton()
     {
         SceneManager.LoadScene("Game");
-        canvasInicio.gameObject.SetActive(false);
+        //canvasInicio.gameObject.SetActive(false);
         
     }
 
@@ -82,30 +80,10 @@ public class Game : MonoBehaviour
         SceneManager.LoadScene("Play");
     }
 
-    public void ActualizarReloj(float tiempoEnsegundos)
+    public void SalirYaa()
     {
-        int minutos = 0;
-        int segundos = 0;
-        string textoDelReloj;
-
-        //Asegurar que el tiempo no sea negativo
-        if (tiempoEnsegundos < 0)
-        {
-            tiempoEnsegundos = 0;
-        }
-        //Calcular minutos y segundos
-        minutos = (int)tiempoEnsegundos / 60;
-        segundos = (int)tiempoEnsegundos % 60;
-
-        //crear la cadena de caracterizticas con dos digitos para los minutos y segundos, separados por ":"
-        textoDelReloj = minutos.ToString("00") + ":" + segundos.ToString("00");
-
-        //actualizar el elemento de text de ui con la cadena de caracteres
-        myText.text = textoDelReloj;
-
+        Debug.Log("Cerrando");
+        Application.Quit();
     }
-
-   
-
 
 }
