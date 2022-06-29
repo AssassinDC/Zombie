@@ -40,6 +40,10 @@ public class Controller : MonoBehaviour
             cantidadPuntos = 0;
         }*/
 
+        velocidadMove = (Random.Range(1f, 4f));
+
+        damage = (Random.Range(1, 3));
+
     }
 
     

@@ -52,7 +52,7 @@ MonoBehaviour:
   - {fileID: 9158644447979168934}
   distancia: 1
   isHuman: 0
-  damage: 4
+  damage: 2
   Sprite:
   - {fileID: 4846615319675220804}
   - {fileID: 9158644447388693073}

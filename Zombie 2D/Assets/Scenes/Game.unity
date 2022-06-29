@@ -784,10 +784,9 @@ MonoBehaviour:
   - {fileID: 1333621883}
   gameOver: {fileID: 0}
   life: 3
-  score: 0
   textoScore: {fileID: 1502088625}
-  timeInicial: 0
-  escalaDeTiempo: 1
+  timeInicial: 210
+  escalaDeTiempo: -1
   myText: {fileID: 126186535}
 --- !u!20 &519420031
 Camera:
@@ -1390,9 +1389,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasGameOver: {fileID: 0}
+  puntos: {fileID: 0}
   canvasInicio: {fileID: 0}
   canvasPausa: {fileID: 108896657}
   botonPausa: {fileID: 1414313795}
+  canvasWin: {fileID: 0}
+  canvasReglas: {fileID: 0}
 --- !u!1 &1245401751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,7 +1705,7 @@ MonoBehaviour:
   yRangeUp: {fileID: 1282394603}
   yRangeDown: {fileID: 641444120}
   contador: 0
-  curva: 10
+  curva: 15
 --- !u!1 &1414313795
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class PlayerStadistics : MonoBehaviour
     public int life = 3;
 
     [Header("Score")]
-    public float score;
+    public static float score = 0;
     public TextMeshProUGUI textoScore;
 
 
@@ -40,9 +40,11 @@ public class PlayerStadistics : MonoBehaviour
 
         //inicialmente la variable que acumular los tiempos de cada frame con el tiempo
         tiempoAmostrarEnsegundo = timeInicial;
+        
+        ActualizarReloj(timeInicial);
 
         life = corazon.Length;
-        ActualizarReloj(timeInicial);
+        
         //textoScore = GetComponent<TextMeshProUGUI>();
     }
     public void GameOver()
@@ -83,6 +85,7 @@ public class PlayerStadistics : MonoBehaviour
 
         //score += Time.deltaTime;
         textoScore.text = "Score: " + score.ToString("0");
+       
     }
 
 
@@ -93,7 +96,8 @@ public class PlayerStadistics : MonoBehaviour
 
 
     public void ActualizarReloj(float tiempoEnsegundos)
-    {
+    { 
+       
         int minutos = 0;
         int segundos = 0;
         string textoDelReloj;
@@ -112,6 +116,11 @@ public class PlayerStadistics : MonoBehaviour
 
         //actualizar el elemento de text de ui con la cadena de caracteres
         myText.text = textoDelReloj;
-
+        if(minutos <= 0 && segundos <= 0)
+        {
+            Debug.Log("ganaste");
+            SceneManager.LoadScene("Win");
+            
+        }
     }
 }

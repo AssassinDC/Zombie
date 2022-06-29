@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Game : MonoBehaviour
 {
     [Header("Game Over")]
     public GameObject canvasGameOver;
+    PlayerStadistics codigoScore;
+    public Text puntos;
 
     [Header("Inicio")]
     public GameObject canvasInicio;
@@ -16,15 +19,17 @@ public class Game : MonoBehaviour
     public GameObject canvasPausa;
     public GameObject botonPausa;
     private bool isPause;
+
+    [Header("WIN")]
+    public GameObject canvasWin;
+
+    [Header("Reglas")]
+    public GameObject canvasReglas;
+
     private void Start()
     {
-       
+        codigoScore = FindObjectOfType<PlayerStadistics>();
     }
-    /*public void Setup (int life)
-    {
-        SceneManager.LoadScene("GameOver");
-        //pointsText.text = life.ToString();
-    }*/
 
     private void Update()
     {
@@ -39,6 +44,17 @@ public class Game : MonoBehaviour
                 Pausa();
             }
         }
+
+
+
+    }
+    public void MenuGameOver(float puntosDeEntradaa)
+    {
+        
+
+        codigoScore.SumarPuntos(puntosDeEntradaa);
+
+        puntos.text = "Score" + puntosDeEntradaa;
     }
     public void Pausa()
     {
@@ -63,8 +79,8 @@ public class Game : MonoBehaviour
     }
 
     public void RestartButton()
-    { 
-        
+    {
+        PlayerStadistics.score = 0;
         SceneManager.LoadScene("Game");
     }
 
@@ -78,6 +94,11 @@ public class Game : MonoBehaviour
     public void PlayPlayyer()
     {
         SceneManager.LoadScene("Play");
+    }
+
+    public void Reglas()
+    {
+        SceneManager.LoadScene("Reglas");
     }
 
     public void SalirYaa()
